@@ -392,6 +392,7 @@ function preload(){
   mensagemfinal5 = new GifPng("data/portal fundo/", 6);
 
   fundoFinal = new GifPng("data/fundo organico e metálico/", 69);
+  console.log('fim do preload');
 }
 
 function setup(){
