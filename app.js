@@ -244,11 +244,13 @@ var linhaAngulo = 5;
 var linhaYA = 0;
 var linhaYB = 0;
 var pl;
+var w;
 var plInterval;
 let p = 0;
 
 function preload(){
   pl = document.querySelector('#porcento');
+  w =  document.querySelector('#welcome');
 
   somMsn = loadSound("data/sons/mp3/msn.mp3");
   whats = loadSound("data/sons/mp3/audio whatsapp.mp3");
@@ -401,8 +403,23 @@ function preload(){
   fundoFinal = new GifPng("data/fundo organico e metálico/", 69);
   console.log('fim do preload');
   plInterval = setInterval(()=>{
-    p += random(2,6);
-    pl.innerHTML = "Carregando..."+p+"%";
+
+    if (p <= 93) {
+      if(p > 15 && p <=30){
+        w.innerHTML = "Iniciando Desktop";
+      } else if (p > 30 && p <=52) {
+        w.innerHTML = "Iniciando MSM Messenger";
+      } else if (p > 52 && p <=70) {
+        w.innerHTML = "Iniciando Menus de Interface";
+      } else if (p > 70 && p <=85) {
+        w.innerHTML = "Estabelecendo uma relação direta com o seu coração S2";
+      }
+      p += Math.round(random(2,6));
+      pl.innerHTML = "Carregando... "+p+"%";
+    } else {
+      w.innerHTML = "Pronto para Abrir o Portal";
+      pl.innerHTML = "Carregando... 99%";
+    }
   }, 10000
   );
 }
@@ -413,6 +430,8 @@ function setup(){
 
   cnv.style('display', 'block');
   cnv.parent('app-holder');
+  
+
   whatsY = height;
   if ((typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1)) {
     isMobile = true;
