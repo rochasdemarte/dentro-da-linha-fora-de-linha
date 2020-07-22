@@ -402,12 +402,13 @@ function preload(){
   console.log('fim do preload');
   plInterval = setInterval(()=>{
     p += random(2,6);
-    pl.innerHTML = ;"Carregando..."+p+"%";
+    pl.innerHTML = "Carregando..."+p+"%";
   }, 10000
   );
 }
 
 function setup(){
+  clearInterval(plInterval);
   var cnv = createCanvas(windowWidth, windowHeight);
 
   cnv.style('display', 'block');
