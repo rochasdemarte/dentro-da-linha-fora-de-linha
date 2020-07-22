@@ -243,9 +243,10 @@ var linhaSpace = 75;
 var linhaAngulo = 5;
 var linhaYA = 0;
 var linhaYB = 0;
-var pl = document.querySelector('#porcento');
+var pl;
 
 function preload(){
+  pl = document.querySelector('#porcento');
 
   somMsn = loadSound("data/sons/mp3/msn.mp3");
   whats = loadSound("data/sons/mp3/audio whatsapp.mp3");
