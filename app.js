@@ -244,6 +244,8 @@ var linhaAngulo = 5;
 var linhaYA = 0;
 var linhaYB = 0;
 var pl;
+var plInterval;
+let p = 0;
 
 function preload(){
   pl = document.querySelector('#porcento');
@@ -305,7 +307,6 @@ function preload(){
   core85 = new GifJpg("data/anima core/85/core", 8);
   core95 = new GifJpg("data/anima core/95/core", 8);
   core100 = new GifJpg("data/anima core/100/core", 8);
-  pl.innerHTML = "Carregando...5%";
   fora1 = loadImage("data/lado de fora/imagem1.png");
   fora1Click = loadImage("data/lado de fora/imagem1-clique.png");
   fora1msn = loadImage("data/lado de fora/msn.png");
@@ -319,8 +320,6 @@ function preload(){
   Hall1 = loadImage("data/hall 1/hall-00.jpg");
   hall2 = new GifJpg("data/hall 2/hall", 11);
   hall3 = new GifJpg("data/hall3/hall3-", 25);
-
-  pl.innerHTML = "Carregando...25%";
 
   //Primeiro Andar
   hall1Msn = new GifJpg("data/hall 1/mensagem-escada", 3);
@@ -344,8 +343,6 @@ function preload(){
 
   porta3A = new GifJpg("data/coração linhas/", 20);
 
-  pl.innerHTML = "Carregando...40%";
-
   escada1 = new GifJpg("data/escada 1o andar - lance 1/escada", 6);
   subindo1 = new GifJpg("data/escada 1o andar - lance 1/subindo", 3);
   escada2 = new GifJpg("data/escada 1o andar - lance 2/escada", 2);
@@ -354,7 +351,7 @@ function preload(){
   //Segundo Andar
 
   tituloHall2 = new GifPng("data/hall 2/segundo-andar-letreiro", 2);
-  pl.innerHTML = "Carregando...41%";
+
   porta1Bcav = new GifJpg("data/caverna/caverna", 2);
   porta1Barv = new GifJpg("data/caverna/animação arvores/ani", 33);
   porta2Bora = new GifJpg("data/oração/", 8);
@@ -363,7 +360,7 @@ function preload(){
   porta3Bcru = new GifPng("data/jesus/animação cruz/", 83);
 
   portaAbre2 = new GifJpg("data/porta abrindo hall2/porta", 5);
-  pl.innerHTML = "Carregando...42%";
+
   invisivel = new GifJpg("data/olhos/invisível", 2);
   inviClick = new GifJpg("data/olhos/invisível-clique", 2);
   olhosMsn1 = new GifJpg("data/olhos/olhos-mensagem1/olhosmensagem", 2);
@@ -373,7 +370,7 @@ function preload(){
   palpebra = new GifJpg("data/olhos/palpebra", 7);
 
   escada2andar = new GifJpg("data/escada 2o andar/escada", 4);
-  pl.innerHTML = "Carregando...50%";
+
   whatsBlack = loadImage("data/whats/whats00.png");
   whatsBlock = loadImage("data/whats/whats01.png");
   whatsFim = loadImage("data/whats/whats57.png");
@@ -383,27 +380,31 @@ function preload(){
   portaJanela = loadImage("data/quarto com janela.png");
   portaJanelaPertin = loadImage("data/janela.png");
   portaJanelaPertin2 = loadImage("data/janela2.png");
-  pl.innerHTML = "Carregando...65%";
+
   retrospectiva = new GifPng("data/retrospectiva/c/", 32);
   giro1 = new GifPng("data/giro/", 46);
   giro2 = new GifPng("data/giro2/", 37);
-  pl.innerHTML = "Carregando...75%";
+
   subindoFim = new GifPng("data/subindo/", 75);
   descendoFim = new GifPng("data/descendo/", 64);
-  pl.innerHTML = "Carregando...85%";
+
   retornoBranco = new GifPng("data/mensagemfinalbranco", 3);
   mensagemfinal = new GifPng("data/mensagemfinal1-", 11);
   mensagemfinal2 = new GifPng("data/mensagemfinal2-", 11);
   mensagemfinal3 = new GifPng("data/mensagemfinal3-", 11);
-  pl.innerHTML = "Carregando...89%";
+
   mensagemfinal4 = new GifPng("data/portal fundo/mensagemfinal3/", 6);
-  pl.innerHTML = "Carregando...92%";
+
   mensagemfinal5 = new GifPng("data/portal fundo/", 6);
-  pl.innerHTML = "Carregando...96%";
+
 
   fundoFinal = new GifPng("data/fundo organico e metálico/", 69);
-  pl.innerHTML = "Carregando...99%";
   console.log('fim do preload');
+  plInterval = setInterval(()=>{
+    p += random(2,6);
+    pl.innerHTML = ;"Carregando..."+p+"%";
+  }, 10000
+  );
 }
 
 function setup(){
