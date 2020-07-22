@@ -295,14 +295,14 @@ function preload(){
 
   console.log ("Estabelecendo uma relação direta com o seu coração S2");
 
-  core0 = new GifJpg("data/anima_core/0%/core", 8);
-  core5 = new GifJpg("data/anima_core/5%/core", 8);
-  core30 = new GifJpg("data/anima_core/30%/core", 8);
-  core50 = new GifJpg("data/anima_core/50%/core", 8);
-  core70 = new GifJpg("data/anima_core/70%/core", 8);
-  core85 = new GifJpg("data/anima_core/85%/core", 8);
-  core95 = new GifJpg("data/anima_core/95%/core", 8);
-  core100 = new GifJpg("data/anima_core/100%/core", 8);
+  core0 = new GifJpg("data/anima core/0/core", 8);
+  core5 = new GifJpg("data/anima core/5/core", 8);
+  core30 = new GifJpg("data/anima core/30/core", 8);
+  core50 = new GifJpg("data/anima core/50/core", 8);
+  core70 = new GifJpg("data/anima core/70/core", 8);
+  core85 = new GifJpg("data/anima core/85/core", 8);
+  core95 = new GifJpg("data/anima core/95/core", 8);
+  core100 = new GifJpg("data/anima core/100/core", 8);
 
   fora1 = loadImage("data/lado de fora/imagem1.png");
   fora1Click = loadImage("data/lado de fora/imagem1-clique.png");
