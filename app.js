@@ -419,13 +419,14 @@ function preload(){
     } else {
       w.innerHTML = "Pronto para Abrir o Portal";
       pl.innerHTML = "Carregando... 99%";
+      clearInterval(plInterval);
     }
-  }, 10000
+  }, 1000
   );
 }
 
 function setup(){
-  clearInterval(plInterval);
+  
   var cnv = createCanvas(windowWidth, windowHeight);
 
   cnv.style('display', 'block');
